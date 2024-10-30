@@ -1,16 +1,30 @@
 ---
-
+import Layout from '@layout/Layout.astro';
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+<Layout title='Desafios UI'>
+	<main class="max-w-screen-xl m-auto text-white p-16">
+
+		<h1 class="text-center text-3xl">Desafios UI</h1>
+
+		<ul>
+			<li>
+				<a href="/desafio1" class="w-full p-[10px] rounded-lg font-black text-base text-[var(--azul)] bg-[var(--verde-neon)]"> Desafio 1</a>
+			</li>
+		</ul>
+				
+	</main>
+</Layout>
+
+<style>
+	    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+	    :root{
+        --verde-neon: #BCFF5F;
+        --azul: #054BB4;
+    }
+
+    main {        
+		font-family: Nunito;
+	}
+</style>
