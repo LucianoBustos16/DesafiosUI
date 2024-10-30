@@ -1,0 +1,112 @@
+---
+import Mobile from '@/components/Mobile.astro';
+import Titledesafios from '@/components/TitleDesafios.astro';
+import Layout from '@layout/Layout.astro';
+import Eye from '../../public/icons/eye.astro'
+import Google from 'public/icons/Google.astro';
+
+const title = "Desafio 1"
+---
+
+<Layout title={title}>
+    <main class="max-w-screen-xl m-auto">
+
+
+        <Mobile>
+            <main class="bg-[var(--azul)] size-full">
+
+                <!-- HERO SECTION -->
+                <div class="w-full flex justify-between py-11">
+                    <img class="-ml-2 mt-2" src="/imgs/desafio1/Perro1.svg" alt="">
+                    <img class="-mr-2" src="/imgs/desafio1/Perro2.svg" alt="">
+                </div>
+
+                <!-- Contenido -->
+                 <div class="mx-4 mt-6 mb-4 flex flex-col gap-8">
+                     <h1 class="text-[var(--verde-neon)] text-[32px] leading-8 text-balance font-black">Te damos la bienvenida, humano</h1>
+
+                     <!-- Campos + botones -->
+                     <div class="flex flex-col gap-8">
+                        <div class="flex flex-col gap-4">
+                            <form class="flex flex-col gap-6">
+                                <div class="flex flex-col gap-[6px]">
+                                    <label for="email" class="font-black text-sm text-[var(--verde-neon)]">Correo electrónico</label>
+                                    <input type="email" name="email" id="email" class="bg-transparent border border-[var(--verde-neon)] py-[10px] px-3 rounded-lg placeholder:text-[var(--verde-neon)] text-[var(--verde-neon)] focus:outline-none" placeholder="Ingresá tu correo electrónico" required>
+                                </div>
+
+                                <div>   
+                                    <label for="password" class="font-black text-sm text-[var(--verde-neon)]">Contraseña</label>
+                                    <div class="relative">
+                                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none ">
+                                        </div>
+                                        <input type="password" id="password" class="block w-full py-[10px] px-3 bg-transparent border border-[var(--verde-neon)] rounded-lg placeholder:text-[var(--verde-neon)] text-[var(--verde-neon)] focus:outline-none" placeholder="Ingresá tu contraseña" required />
+                                        <button
+                                        type="button"
+                                            id="showPasswordButton"
+                                            class="text-[var(--verde-neon)] absolute end-2.5 bottom-1 hover:bg-black/10 rounded-full text-sm p-2 "><Eye/></button>
+                                     </div>
+                                    </div>
+
+
+                            </form>
+                            <a href="#" class="text-[var(--verde-neon)] font-black text-right">Me olvidé la contraseña</a>
+
+                        </div>
+
+                     </div>
+
+                     <!-- CTA's -->
+                      <div class="flex flex-col gap-5">
+                        <div class="flex flex-col gap-5">
+                            <button class="w-full p-[10px] rounded-lg font-black text-base text-[var(--azul)] bg-[var(--verde-neon)]">Iniciar Sesión</button>
+                            <button class="w-full flex justify-center items-center gap-2 p-[10px] rounded-lg font-black text-base text-[var(--verde-neon)] bg-transparent border border-[var(--verde-neon)]"><Google/> Iniciar Sesión con Google</button>
+                        </div>
+
+                        <div class="flex gap-4 items-center h-10">
+                            <hr class="w-full border-[var(--verde-neon)]">
+                            <p class="p-[10px] font-black text-[var(--verde-neon)] ">
+                                o
+                            </p>
+                            <hr class="w-full border-[var(--verde-neon)]">
+
+                        </div>
+
+                        <button class="w-full flex justify-center items-center gap-2 p-[10px] rounded-lg font-black text-base text-[var(--verde-neon)] bg-transparent">Crear cuenta</button>
+
+                      </div>
+
+                 </div>
+
+            </main>
+
+        </Mobile>
+
+    </main>
+</Layout>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+    :root{
+        --verde-neon: #BCFF5F;
+        --azul: #054BB4;
+    }
+
+    main {        
+		font-family: Nunito;
+	}
+</style>
+
+
+<script>
+    const passwordInput = document.getElementById('password') as HTMLInputElement;
+    const showPasswordButton = document.getElementById('showPasswordButton');
+  
+    showPasswordButton.addEventListener('click', () => {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+      } else {
+        passwordInput.type = 'password';
+      }
+    });
+  </script>
