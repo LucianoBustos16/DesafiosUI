@@ -1,0 +1,91 @@
+---
+import Item from '@/components/desafio3/Item.astro';
+import Mobile from '@/components/Mobile.astro';
+import Layout from '@layout/Layout.astro';
+
+const title = "Desafio 1"
+---
+
+
+<Layout title={title}>
+    <Mobile>
+        <main class="bg-white size-full scrollbar-thumb-rounded-full scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-slate-700 scrollbar-track-slate-300 overflow-y-scroll">
+            <header class="w-full justify-center text-center p-4 font-bold text-xl">Perfil</header>
+
+            <div class="flex flex-col gap-5">
+
+                <!-- HEADER -->
+                <div class="px-6 flex items-center gap-4">
+                    <img class="size-16" src="/imgs/desafio3/smile.png" alt="Foto de perfil">
+                    <div class="">
+                        <p class="font-semibold text-lg">Luchito</p>
+                        <p>bustosluciano89@gmail.com</p>
+                    </div>
+                </div>
+
+                <!-- SECTION 1 -->
+                <div class="p-4 flex flex-col gap-6">
+                    <h2 class="font-semibold">Configuración</h2>
+                    <ul class="w-full">
+                        <Item label='Información personal' icon='person'/>
+                        <Item label='Seguridad' icon='seguridad'/>                        
+                        <Item label='Notificaciones' icon='notificaciones'/>                        
+                        <Item label='Accesibilidad' icon='accesibilidad'/>                        
+                        <Item label='Idioma' icon='idioma'/>                        
+                        <Item label='Preferencias y Modo' icon='luna'/>                       
+                    </ul>                    
+                </div>
+
+                <!-- SECTION 2 -->
+                <div class="p-4 flex flex-col gap-6">
+                    <h2 class="font-semibold">Referidos</h2>
+                    <ul class="w-full">
+                        <Item label='Referí y Ganá' icon='regalo'/>                  
+                    </ul>                    
+                </div>
+
+                <!-- SECTION 3 -->
+                <div class="p-4 flex flex-col gap-6">
+                    <h2 class="font-semibold">Ayuda y Soporte</h2>
+                    <ul class="w-full">
+                        <Item label='Preguntas frecuentes' icon='help'/>
+                        <Item label='Contactar a Soporte' icon='chat'/>                        
+                        <Item label='Reportar un problema' icon='info'/>                        
+                        <Item label='Danos feedback' icon='create'/>                    
+                    </ul>                    
+                </div>
+
+                <!-- SECTION 4 -->
+                <div class="p-4 flex flex-col gap-6">
+                    <h2 class="font-semibold">Privacidad y Términos</h2>
+                    <ul class="w-full">
+                        <Item label='Términos y Condiciones' icon='papel'/>
+                        <Item label='Políticas de Privacidad' icon='papel'/>                                      
+                    </ul>                    
+                </div>
+
+                <!-- SECTION 4 -->
+                <div class="p-4 flex flex-col gap-6">
+                    <button
+                        type="button"
+                        class="flex gap-2 items-center justify-center hover:bg-black/10 rounded-xl text-sm px-4 py-[14px] border border-black">
+                        <img src="/imgs/desafio3/icons/salir.svg" alt="Salir">
+                        Cerrar sesión
+                    </button>
+                 </div>                  
+                </div>
+
+            </div>
+
+        </main>
+
+    </Mobile>
+</Layout>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+    main {        
+		font-family: Raleway;
+	}
+</style>

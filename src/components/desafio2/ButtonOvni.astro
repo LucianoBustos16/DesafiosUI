@@ -1,0 +1,48 @@
+<button class="btn-ovni">
+    <span id="boton-ovni">🛸</span>Empezar
+</button>
+
+
+<style>
+        .btn-ovni{
+        background: #fff;
+        color: black;
+        width: 275px;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 16px;
+        position: relative;
+    }
+
+  #boton-ovni {
+  position: absolute;
+  bottom: -50px; /* Inicialmente fuera de la vista */
+  transition: transform 0.3s ease-in-out; /* Animación de transición */
+  display: none;
+}
+
+.btn-ovni:hover > #boton-ovni {
+  transform: translateY(-50px); /* Mueve el OVNI hacia arriba */
+  display: inline;
+}
+
+</style>
+
+<script>
+const ovni = document.getElementById('boton-ovni');
+const button = document.querySelector('button');
+
+button.addEventListener('click', () => {
+  const moveOvni = setInterval(() => {
+    const randomTop = Math.floor(Math.random() * 10) - 10; // Movimiento aleatorio en el eje Y
+    const randomLeft = Math.floor(Math.random() * 10) - 10; // Movimiento aleatorio en el eje X
+    ovni.style.top = randomTop + 'px';
+    ovni.style.left = randomLeft + 'px';
+  }, 100); // Ajusta el valor para cambiar la velocidad del movimiento
+
+  // Para detener el movimiento al hacer clic nuevamente:
+  button.addEventListener('click', () => {
+    clearInterval(moveOvni);
+  }, { once: true });
+});
+</script>

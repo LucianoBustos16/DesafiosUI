@@ -1,0 +1,58 @@
+---
+import ButtonOvni from '@/components/desafio2/ButtonOvni.astro';
+import Layout from '@layout/Layout.astro';
+import Logo from 'public/imgs/desafio2/logo.astro';
+---
+
+<Layout title="Desafío 2">
+
+    <main class="size-full h-screen text-white items-center">
+        <header class="flex justify-between w-full px-8 py-6 fixed">
+            <a href="#" class="logo"><Logo/> </a>
+
+            <nav class="flex gap-8 items-center">
+                <ul class="flex gap-8 items-center">
+                    <li>Inicio</li>
+                    <li>Qúe buscamos</li>
+                    <li>Sobre nosotros</li>
+                    <li>Contacto</li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="flex flex-col items-center justify-center h-screen">
+            <h1 class="text-[64px] text-pretty max-w-[625px] text-center">Busquemos vida en el espacio</h1>
+            <ButtonOvni/>
+        </div>
+    </main>
+
+
+    
+
+
+</Layout>
+
+<style>
+    @import url('https://fonts.cdnfonts.com/css/yeyey');
+
+    :root{
+        --primary: #7B2CBF;
+        --primary-dark: #5A189A;
+        --primary-Superdark: #260957;
+        --primary-light: #9D4EDD;
+        --disabled: #9D9D9D;
+        --gray-light: #D7D7D7
+    }
+
+    main{
+        background-image: url(/public/imgs/desafio2/bg-espacio.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    h1{
+        font-family: yeyey;
+        letter-spacing: -0.5px;
+        line-height: 80px;
+    }
+
+</style>
