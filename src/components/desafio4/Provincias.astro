@@ -1,0 +1,44 @@
+---
+const provincias = [
+    {provincia: "Buenos Aires", id: "BuenosAires", opiniones: 120},
+    {provincia: "Catamarca", id: "Catamarca", opiniones: 45},
+    {provincia: "Chaco", id: "Chaco", opiniones: 67},
+    {provincia: "Chubut", id: "Chubut", opiniones: 32},
+    {provincia: "Córdoba", id: "Cordoba", opiniones: 88},
+    {provincia: "Corrientes", id: "Corrientes", opiniones: 50},
+    {provincia: "Entre Ríos", id: "EntreRios", opiniones: 72},
+    {provincia: "Formosa", id: "Formosa", opiniones: 15},
+    {provincia: "Jujuy", id: "Jujuy", opiniones: 40},
+    {provincia: "La Pampa", id: "LaPampa", opiniones: 23},
+    {provincia: "La Rioja", id: "LaRioja", opiniones: 18},
+    {provincia: "Mendoza", id: "Mendoza", opiniones: 95},
+    {provincia: "Misiones", id: "Misiones", opiniones: 56},
+    {provincia: "Neuquén", id: "Neuquen", opiniones: 38},
+    {provincia: "Río Negro", id: "RioNegro", opiniones: 42},
+    {provincia: "Salta", id: "Salta", opiniones: 74},
+    {provincia: "San Juan", id: "SanJuan", opiniones: 30},
+    {provincia: "San Luis", id: "SanLuis", opiniones: 29},
+    {provincia: "Santa Cruz", id: "SantaCruz", opiniones: 11},
+    {provincia: "Santa Fe", id: "SantaFe", opiniones: 84},
+    {provincia: "Santiago del Estero", id: "SantiagoDelEstero", opiniones: 33},
+    {provincia: "Tierra del Fuego", id: "TierraDelFuego", opiniones: 9},
+    {provincia: "Tucumán", id: "Tucuman", opiniones: 55}
+]
+---
+
+<div class="flex flex-col gap-8">
+    {
+        provincias.map(({ provincia, id, opiniones}) => (
+                <a class="flex flex-col gap-3">
+                    <img src={`/imgs/desafio4/imgs/${id}.webp`} alt={`imagen de ${provincia}`} class="aspect-video w-full h-[180px] object-cover rounded-xl">
+                    <div class="flex items-center justify-between w-full">
+                        <p class="font-semibold">{provincia}</p>
+                        <p class="text-sm flex items-center gap-2">
+                            <img src={`/imgs/desafio4/icons/star.svg`} alt="" aria-hidden="true">{opiniones} opiniones</p>    
+                    </div>
+                </a>
+                    )
+                )
+        }
+</div>
+

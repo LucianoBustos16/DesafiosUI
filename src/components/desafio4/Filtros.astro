@@ -1,0 +1,66 @@
+---
+
+const filtros = [
+    {
+        label: "Provincias",
+        icon: "ubicacion",
+        active: "true"
+    },
+    {
+        label: "Playa",
+        icon: "playa"
+    },
+    {
+        label: "Aventura",
+        icon: "aventura"
+    },
+    {
+        label: "Montaña",
+        icon: "montana"
+    },
+    {
+        label: "Nieve",
+        icon: "nieve"
+    },
+    {
+        label: "Centros de Ski",
+        icon: "ski"
+    },
+    {
+        label: "Relax",
+        icon: "relax"
+    },
+    {
+        label: "Rutas de Vino",
+        icon: "vino"
+    },
+    {
+        label: "Bosque",
+        icon: "bosque"
+    },
+    {
+        label: "Act. Acuáticas",
+        icon: "barco"
+    },
+    {
+        label: "Acampe",
+        icon: "carpa"
+    },
+]
+
+---
+
+<ul class="flex overflow-scroll min-h-fit scrollbar-none custom-scrollbar gap-x-4 md:gap-x-8 snap-mandatory snap-x -mr-4 pr-4 md:mr-0 md:pr-0">
+    {
+        filtros.map(({ label, icon, active}) => (
+            <li class="flex flex-col items-center gap-2 snap-center text-xs font-medium text-nowrap text-center">
+                    <img src={`/imgs/desafio4/icons/${icon}.svg`} width="24" height="24" alt={label}/>
+                    {label}
+
+                    {active && <div class="w-2/3 h-[1px] bg-[var(--gris-claro)]"></div>}
+                </li>
+                )
+            )
+    }
+    
+</ul>

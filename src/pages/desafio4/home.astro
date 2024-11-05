@@ -1,0 +1,78 @@
+---
+import Filtros from '@/components/desafio4/Filtros.astro';
+import NavBar from '@/components/desafio4/NavBar.astro';
+import Provincias from '@/components/desafio4/Provincias.astro';
+import Mobile from '@/components/Mobile.astro';
+import Layout from '@layout/Layout.astro';
+---
+
+<Layout title='Desafios UI'>
+    <Mobile>
+        <main class="relative bg-[#212529] text-[var(--gris-medio)] size-full scrollbar-thumb-rounded-full scrollbar-thin scrollbar-track-rounded-full scrollbar-thumb-slate-700 scrollbar-track-slate-300 overflow-y-scroll py-4 flex flex-col gap-8 p-4 pb-28">             
+
+
+            <header class="w-full flex justify-between items-start">
+                <div>
+                    <h2 class="font-semibold">Hola Phoebe</h2>
+                    <p class="text-sm">📍 Buenos Aires</p>                    
+                </div>
+
+                <button
+                    type="button"
+                    class="flex items-center justify-center bg-[var(--teal)] hover:brightness-75 rounded-full text-sm p-1 ">
+                    <img src="/imgs/desafio4/icons/notificaciones.svg" alt="Notificaciones">
+                </button>
+            </header>
+            
+            <form class="max-w-md w-full mx-auto">   
+                <label for="default-search" class="mb-2 text-sm font-medium sr-only">¿A dónde te gustaría ir?</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                        </svg>
+                    </div>
+                    <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm  border border-[var(--dark-medio)] rounded-lg bg-[var(--dark-claro)] placeholder:text-[var(--gris-medio)]" placeholder="¿A dónde te gustaría ir?" required />
+                </div>
+            </form>
+
+
+            <!-- Filtros -->
+             <Filtros/>
+
+            <!-- Provincias -->
+            <Provincias/>
+
+            
+        </main>
+        <!-- NavBar -->
+         <NavBar/>
+    </Mobile>
+</Layout>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+    
+:root{
+    --dark-claro: #2D3136;
+    --dark-oscuro: #1B1B1B;
+    --dark-medio: #212529;
+    --gris-claro: #F0F0F0;
+    --gris-medio: #E8E8E8;
+    --gris-oscuro: #D7D7D7;
+    --teal: #2B484D;
+    --primary: #16A6C2;
+}
+
+    input#default-search{
+        -webkit-box-shadow: 0px 0px 6px 0px rgba(22,166,194,.3);
+-moz-box-shadow: 0px 0px 6px 0px rgba(22,166,194,.3);
+box-shadow: 0px 0px 6px 0px rgba(22,166,194,.3);
+    }
+
+    main {
+        font-family: "Poppins";
+    }
+</style>
+
